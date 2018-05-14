@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+message currentObs {
+    int32 cloudCeiling = 1;
+    string cloudCoverPhrase = 2;
+    string dayOfWeek = 3;
+    enum dayOrNight {
+        eclipse = 0;
+        Day = 1;
+        Night = 2;
+    };
+    int64 expirationTimeUtc = 4;
+    int32 iconCode = 5;
+    int32 obsQualifierCode = 6;
+    string obsQualifierSeverity = 7;
+    float precip24Hour = 8;
+    float pressureAltimeter = 9;
+    float pressureChange = 10;
+    float pressureMeanSeaLevel = 11;
+    int32 pressureTendencyCode = 12;
+    string pressureTendencyTrend = 13;
+    float relativeHumidity = 14;
+    float snow24Hour = 15;
+    string sunriseTimeLocal = 16;
+    int64 sunriseTimeUtc = 17;
+    string sunsetTimeLocal = 18;
+    int64 sunsetTimeUtc = 19;
+    float temperature = 20;
+    float temperatureChange24Hour = 21;
+    float temperatureDewPoint = 22;
+    float temperatureFeelsLike = 23;
+    float temperatureHeatIndex = 24;
+    float temperatureMax24Hour = 25;
+    float temperatureMaxSince7Am = 26;
+    float temperatureMin24Hour = 27;
+    float temperatureWindChill = 28;
+    string uvDescription = 29;
+    string uvIndex = 30;
+    string validTimeLocal = 31;
+    int64 validTimeUtc = 32;
+    string visibility = 33;
+    float windDirection = 34;
+    enum windDirectionCardinal {
+        U = 0;
+        N = 1;
+        NNE = 2;
+        NE = 3;
+        ENE = 4;
+        E = 5;
+        ESE = 6;
+        SE = 7;
+        SSE = 8;
+        S = 9;
+        SSW = 10;
+        SW = 11;
+        WSW = 12;
+        W = 13;
+        WNW = 14;
+        NW = 15;
+        NNW = 16;
+    };
+    float windGust = 36;
+    float windSpeed = 37;
+    string wxPhraseLong = 38;
+    string wxPhraseMedium = 39;
+    string wxPhraseShort = 40;
+}

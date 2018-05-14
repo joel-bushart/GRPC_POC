@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+message SampleRequest{
+    string firstname = 1;
+    string lastname = 2;
+    uint32 age = 3;
+    repeated string locations = 4;
+}
+
+message SampleReply{
+    string firstname = 1;
+    string lastname = 2;
+    uint32 age = 3;
+    repeated string locations = 4;
+}
+
+service SampleService {
+    // Sends a greeting
+    rpc SampleServer (SampleRequest) returns (SampleReply) {}
+}
