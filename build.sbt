@@ -2,12 +2,14 @@ name := "GRPC_POC"
 
 version := "0.1"
 
-scalaVersion := "2.12.4-bin-typelevel-4"
+scalaVersion := "2.12.6"
 
-inThisBuild(Seq(
-  scalaOrganization := "org.typelevel",
-  scalaVersion := "2.12.4-bin-typelevel-4"
-))
+//wartremoverErrors ++= Warts.unsafe
+
+//inThisBuild(Seq(
+//  scalaOrganization := "org.typelevel",
+//  scalaVersion := "2.12.6"
+//))
 
 PB.targets in Compile := Seq(
   scalapb.gen() -> (sourceManaged in Compile).value
@@ -33,6 +35,7 @@ libraryDependencies ++= Seq(
   "io.protoless" %% "protoless-generic" % "0.0.8-M1",
   "com.chuusai" %% "shapeless" % "2.3.3",
   "org.typelevel" %% "cats-core" % "1.0.1",
+
 
   "io.grpc" % "grpc-netty" % scalapb.compiler.Version.grpcJavaVersion,
   "com.thesamet.scalapb" %% "scalapb-runtime-grpc" % scalapb.compiler.Version.scalapbVersion,
